@@ -1,0 +1,99 @@
+/*
+* @Oluwagbuyi Abimbola, Natty Blessing
+* 21th of March,2018
+* Planet Nest
+*/
+.particle-header{
+    overflow: hidden;
+    @for $i from 1 through 200{
+       
+        .img-#{$i}{
+            position: absolute;
+            color: red;
+            width:40px;
+            margin: 30px;
+            height:40px;
+            border-radius: 100px;
+            border-radius: 100px;
+            animation: anim-#{$i} $i*16000+ms infinite;
+            animation-delay: 500ms;
+           
+        }
+    }
+}
+
+@for $i from 1 through 100{
+    @keyframes anim-#{$i}{
+        10%{
+            -moz-transform: translate3d($i*20+px, 0px, 0px);
+          -webkit-transform: translate3d($i*20+px, 0px, 0px);
+          -o-transform: translate($i*20+px, 0px);
+          -ms-transform: translate($i*20+px, 0px);
+          transform: translate3d($i*20+px, 0px, 0px);
+            margin-top:$i*5+px;
+            margin-left: $i+1*4+px;
+             background-color: rgba(233,233,233,.2);
+        }
+        20%{
+            -moz-transform: translate3d($i*-5+px, 0px, 0px);
+          -webkit-transform: translate3d($i*35+px, 0px, 0px);
+          -o-transform: translate($i*30+px, 0px);
+          -ms-transform: translate($i*40+px, 0px);
+          transform: translate3d($i*-5+px, 0px, 0px);
+               margin-left: $i+1*4+px;
+                margin-top:$i*6+px;
+            background-color: rgba(200,200,200,.1);
+        }
+        30%{
+              -moz-transform: translate3d($i*-10+px, 0px, 0px);
+          -webkit-transform: translate3d($i*70+px, 0px, 0px);
+          -o-transform: translate($i*70+px, 0px);
+          -ms-transform: translate($i*70+px, 0px);
+          transform: translate3d($i*70+px, 0px, 0px);
+           margin-left: $i+1*4+px;
+            margin-top:$i*12+px;
+            background-color: rgba(240,240,240,.1);
+        }
+        40%{
+              -moz-transform: translate3d($i*70+px, 0px, 0px);
+          -webkit-transform: translate3d($i*70+px, 0px, 0px);
+          -o-transform: translate($i*70+px, 0px);
+          -ms-transform: translate($i*70+px, 0px);
+          transform: translate3d($i*70+px, 0px, 0px);
+           margin-left: $i+1*4+px;
+            margin-top: $i*14+200+px;
+            background-color: rgba(13,223,123,.2);
+        }
+        60%{
+              -moz-transform: translate3d($i*30-5+px, 0px, 0px);
+          -webkit-transform: translate3d($i*-30-5+px, 0px, 0px);
+          -o-transform: translate($i*30-5+px, 0px);
+          -ms-transform: translate($i*30-5+px, 0px);
+          transform: translate3d($i*30-5+px, 0px, 0px);
+            margin-left: $i+1*4+px;
+            margin-top:$i*4+px;
+            background-color: rgba(139,131,223,.1);
+                
+            
+        }
+        80%{
+              -moz-transform: translate3d($i*20+30+px, 0px, 0px);
+          -webkit-transform: translate3d($i*20+30+px, 0px, 0px);
+          -o-transform: translate($i*20+30+px, 0px);
+          -ms-transform: translate($i*20+30+px, 0px);
+          transform: translate3d($i*20+30+px, 0px, 0px);
+           margin-left: $i+1*4+px;
+            margin-top:$i*20+px
+        }
+        100%{
+              -moz-transform: translate3d($i*20*7.4+px, 0px, 0px);
+          -webkit-transform: translate3d($i*20*7.4+px, 0px, 0px);
+          -o-transform: translate($i*20*7.4+px, 0px);
+          -ms-transform: translate($i*20*7.4+px, 0px);
+          transform: translate3d($i*20*7.4+px, 0px, 0px);
+           margin-left: $i+1*4+px;
+            margin-top:$i*30+px;
+             background-color: rgba(239,231,223,.1);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.section{
+    width:50%;
+    height: 500px;
+    margin-top: 20px;
+}
+.brandname-section{
+   
+    & .playbtn{
+         box-shadow: 1px 1px 0px 3px rgba(234,234,234,.2);
+        text-align: center;
+        & .ion{
+            font-size: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    }
+    
+}

@@ -1,0 +1,105 @@
+@import "partials/font";
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/reset";
+
+/*
+* 
+*/
+
+body,html{
+    overflow-x: hidden;
+}
+.navbar{
+    background-color: $nav_bgcolor;
+    font-family: 'Raleway';
+    font-size:16px;
+}
+
+.navbar-section{
+    padding: 20px;
+    display: flex;
+}
+.navbar{
+    & .brand{
+        margin-top: 10px;
+        width:35%;
+        & .brand-name{
+            text-align: center;
+            font-size: 2.0rem;
+            & a{
+                 text-shadow: 0 -.005em .045em #335166;
+                text-decoration: $no-text-decor;
+                color: $black-color;
+                font-weight: 100;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(92deg, rgba(100, 10, 200, 0.9), rgba(140, 130, 4, 0.9));
+                -webkit-background-clip: text;
+            }
+        } 
+    }
+    & .search{
+        width:30%;
+        & .search-section{
+            display: inline-block;
+            border-radius: 20px;
+            margin-top:.9rem;
+            width:100%;
+            height: 25px;
+            padding: .4rem;
+            position: relative;
+            background-color: $gray-color;
+            & .ion, .search-input{
+            }
+            & .ion{
+                color:#77a0bb;
+                font-size:20px;
+                position: absolute;
+                left:20px;
+                top:10px;
+            }
+            & .search-input{
+                background-color: transparent;
+                color: $text-input-color;
+                 text-shadow: 0 -.01em .05em #335166;
+                margin-top: 5px;
+                width:80%;
+                box-shadow: none;
+                outline: none;
+                margin-left: 2.2rem;
+                @extend remove-border;
+            }
+        }
+    }
+    & .button-section{
+        width:35%;
+        text-align: center;
+        & .btn{
+            margin-top:10px;
+            & button{
+                padding: 5px;
+                margin: 4px;
+                width:5.0rem;
+                cursor: pointer;
+                border: none;
+                font-size: 1.0rem;
+            }
+            &-share{
+                padding: .3em .8em;
+                border: 1px solid #446d88;
+                background: #58a linear-gradient(#77a0bb, #58a);
+                border-radius: 1.3em;
+                box-shadow: 0 .05em .25em gray;
+                color: white;
+                text-shadow: 0 -.05em .05em #335166;
+                font-size: 125%;
+                line-height: 1.5;
+            }
+            &-explore{
+                background-color: transparent;
+                color: $black-color;
+                 text-shadow: 0 -.01em .05em #335166;
+            }
+        }
+    }
+}

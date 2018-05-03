@@ -1,0 +1,11 @@
+/*
+* reset all element in margin and padding
+*/
+*,html,body{
+    padding: 0;
+    margin: 0;
+}
+
+remove-border{
+    border: none;
+}

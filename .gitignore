@@ -1,0 +1,7 @@
+node_modules/
+.vscode/
+ionicons-2.0.1/
+memm-api/
+styles/scss/fonts/
+styles/scss/*.css
+styles/scss/*.map
