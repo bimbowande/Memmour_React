@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Entry from './Auth/Entry.jsx';
+import Entry from './Auth/Entry.js';
 
 class App extends Component{
     constructor(props){

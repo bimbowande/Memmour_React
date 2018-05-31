@@ -1,42 +1,41 @@
 
 import React, { Component } from 'react';
 
-import Brandname from '../BrandProps/Brandname.jsx';
-import Loginform  from './Logincomponents/Loginform.jsx';
-import Signform  from './Logincomponents/Signform.jsx';
+import Brandname from '../BrandProps/Brandname.js';
+import Loginform  from './Logincomponents/Loginform.js';
+import Signform  from './Logincomponents/Signform.js';
+
+import '../../styles/login.scss';
 
 
 export default class Entry extends Component {
+    componentWillMount(){
+        let i = 0
+        setInterval(()=>{
+            i++;
+            this.setState({value:this.state.value+1})
+        },4000);
+    }
     constructor(props){
         super(props);
         this.state = {
-            value :1
+            value :0,
+            data:false
         }
-        this._randomText = this._randomText.bind(this);
+       
     }
-    _randomText(){
+    render(){
+        let dt = document.querySelector('.tagline-text');
         const taglineText = ['Memories are worth sharing ',
         'Every Moment Shared is Remarkable','With memories you can live each moment',
         'Listen to the beating of your heart'];
-        let taglinearr = 0;
-        let text ='';
-        let value = this.state.quotes;
-         setInterval(()=>{
-            taglinearr++;
-            let _doc = document.querySelector('.tagline-text');
-
-            if(taglinearr>2){
-                taglinearr = 0;
-            }
-            let text = taglineText[taglinearr] + '.';
-            _doc.classList.add('fadeIn')
-            _doc.innerHTML = text;
-        },5000)
-    }
-
-    render(){
-        let classname = 'tagline-text '
-        const changeText = this._randomText();
+        let addClass = this.state.data ? '':'fadeIn';
+        if(this.state.value >=taglineText.length){
+            this.state.value = 0;
+        }
+        let text = taglineText[this.state.value] + '.';
+    
+        /*const changeText = this._randomText();*/
         return(
             <div className="login-container" style={styles.login_container}>
                 <div className="login-content" style={styles.login_content}>
@@ -44,13 +43,13 @@ export default class Entry extends Component {
                         <div className="input-container">
                             <div className="brand-section">
                                 <div className="brand-name">
-                                    <h2><a>Memmour</a></h2> 
+                                    <h2><a>Memmour</a></h2>  
                                 </div>
                             </div>
                                 <Signform/>
                             <div className="to-signup">
                                 <div className="text-content">
-                                    <p>Don't have an account?  <a href="">Sign up</a></p>
+                                    <p>Dont have an account?  <a href="">Sign up</a></p>
                                 </div>
                             </div>
                             <footer className="login-footer">
@@ -60,7 +59,7 @@ export default class Entry extends Component {
                     </div>
                     <div className="image-section" style={styles.imageSection}>
                         <div className="circle" style={styles.circle}>
-                            <p className={classname}> {changeText} </p>
+                            <p className={'tagline-text ' + addClass}>{text}</p>
                         </div>
                     </div>
                 </div>
